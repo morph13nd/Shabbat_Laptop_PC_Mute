@@ -7,12 +7,12 @@ I've created a comprehensive Python script that automatically mutes your laptop 
 
 ## Main Script Features
 
-The script leverages the **Hebcal API** to fetch accurate Shabbat times for New York and uses **AppleScript commands** to control macOS microphone input volume. It employs the **python-crontab library** for dynamic cron job management.[1][2][3][4][5]
+The script leverages the **Hebcal API** to fetch accurate Shabbat times for New York and uses **AppleScript commands** to control macOS microphone input volume. It employs the **python-crontab library** for dynamic cron job management.
 
 **Key Capabilities:**
-- **Automatic Shabbat Detection**: Queries Hebcal API for precise candle lighting and Havdalah times[6][1]
-- **Smart Audio Control**: Uses AppleScript to mute/unmute microphone while preserving original volume levels[2][7]
-- **Self-Managing Crontab**: Dynamically updates cron entries as Shabbat times change throughout the year[3][8]
+- **Automatic Shabbat Detection**: Queries Hebcal API for precise candle lighting and Havdalah times
+- **Smart Audio Control**: Uses AppleScript to mute/unmute microphone while preserving original volume levels
+- **Self-Managing Crontab**: Dynamically updates cron entries as Shabbat times change throughout the year
 - **Continuous Monitoring**: Runs throughout Shabbat to ensure microphone stays muted
 - **Robust Error Handling**: Comprehensive logging and fallback mechanisms
 
@@ -26,13 +26,13 @@ The script leverages the **Hebcal API** to fetch accurate Shabbat times for New 
 
 ## Technical Implementation
 
-The script uses **macOS AppleScript integration** for audio control:[7][9]
+The script uses **macOS AppleScript integration** for audio control:
 ```applescript
 set volume input volume 0  ```ute
 set volume input```lume 75 # Unmute to```ored level
 ```
 
-**Crontab management** handles dynamic scheduling:[10][8]
+**Crontab management** handles dynamic scheduling:
 ```python
 from crontab import CronTab
 cron = CronTab(user```ue)
@@ -40,7 +40,7 @@ job = cron.new(command=```ipt_command)
 job.setall(sh```at_time)
 ```
 
-**API integration** fetches precise times:[11][1]
+**API integration** fetches precise times:
 ```python
 url = f"https://www.hebcal.com/shabbat```g=json&geonameid={GEONAME_ID```=on&m={HAVDALAH_MINUTES}"````
 ```
